@@ -55,6 +55,7 @@ const email = document.getElementById('email');
 // type guard
 if (email) {
     email.addEventListener('change', e => {
+        // the assertion                 ↓
         const input = e.currentTarget;
     });
 }
