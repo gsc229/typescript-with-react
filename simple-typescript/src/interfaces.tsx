@@ -38,7 +38,7 @@ interface Sum {
 }
 
 const sum: Sum = (a, b) => a + b
-sum.prop1 = 'some prop'
+sum.prop1 = 'some prop' // can continue adding properties in addition to the call signature.
 
 // Extend Interface
 interface Parent {
