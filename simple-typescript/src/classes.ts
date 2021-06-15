@@ -1,4 +1,13 @@
 class Robot {
+
+  _color: string;
+  // you cannot access static properties on the class instance i.e. you cannot use this.availableColors rather you must use..
+  // Robot.availableColors - You can only access static proerties on the class itslef (not the instance)
+  static availableColors = ['green', 'yellow']
+  static isColorAvailable(color: string){
+    return Robot.availableColors.includes(color)
+  }
+
   // protected properties conly only be accessed within the class in which it is defined or any sublcass. 
   constructor(protected _name: string){} // automatically does this.name = name
 
@@ -8,6 +17,13 @@ class Robot {
 
   move(distance: number){
     console.log(`${this.name} moved ${distance} meters`)
+  }
+
+  set color(color: string){
+    if(!Robot.isColorAvailable){
+      throw new Error(`Color ${color} is not available`)
+    }
+    this._color = color
   }
 
   set name(value: string){
@@ -20,12 +36,12 @@ class Robot {
 
 }
 
-const robRobot = new Robot('Rob')
+const timRobot = new Robot('Tim')
 
-robRobot.askName()
-robRobot.move(5)
+timRobot.askName()
+timRobot.move(5)
 
-
+// modifiers: readonly, private, protected, static
 
 class FlyingRobot extends Robot{
   
@@ -45,9 +61,12 @@ class FlyingRobot extends Robot{
 
 const royRobot = new FlyingRobot('Roy', 10)
 
-royRobot.askName()
+royRobot.askName()//
 royRobot.move(10)
 
 
-console.log(`Roy robot's jetpack size is ${royRobot.name}`)
+console.log(`Roy robot's jetpack size is ${royRobot.jetpackSize}`)
 console.log('Roy robot protected name', royRobot.name) // error bc name is protected in Robot class
+// can access static methods/properties on the class, but you can make static properties private
+// Classes have two "sides": static (static properties/methods/construcor)  and instance properties/methods
+console.log(Robot.availableColors, Robot.isColorAvailable("yellow"))
