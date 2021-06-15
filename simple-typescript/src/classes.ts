@@ -1,4 +1,12 @@
 class Robot {
+
+  _color: string;
+
+  static availableColors = ['green', 'yellow']
+  static isColorAvailable(color: string){
+    return Robot.availableColors.includes(color)
+  }
+
   // protected properties conly only be accessed within the class in which it is defined or any sublcass. 
   constructor(protected _name: string){} // automatically does this.name = name
 
@@ -8,6 +16,13 @@ class Robot {
 
   move(distance: number){
     console.log(`${this.name} moved ${distance} meters`)
+  }
+
+  set color(color: string){
+    if(!Robot.isColorAvailable){
+      throw new Error(`Color ${color} is not available`)
+    }
+    this._color = color
   }
 
   set name(value: string){

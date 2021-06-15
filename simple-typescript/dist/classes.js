@@ -4,11 +4,20 @@ class Robot {
     constructor(_name) {
         this._name = _name;
     } // automatically does this.name = name
+    static isColorAvailable(color) {
+        return Robot.availableColors.includes(color);
+    }
     askName() {
         console.log(`My name is ${this.name}`);
     }
     move(distance) {
         console.log(`${this.name} moved ${distance} meters`);
+    }
+    set color(color) {
+        if (!Robot.isColorAvailable) {
+            throw new Error(`Color ${color} is not available`);
+        }
+        this._color = color;
     }
     set name(value) {
         this._name = 'PREFIX_' + value;
@@ -17,6 +26,7 @@ class Robot {
         return this._name + '_SUFFIX';
     }
 }
+Robot.availableColors = ['green', 'yellow'];
 const robRobot = new Robot('Rob');
 robRobot.askName();
 robRobot.move(5);
