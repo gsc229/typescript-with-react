@@ -16,4 +16,4 @@ export function calculateTotalAmount(order: IOrder) {
 
   return total
 
-}
+} 
