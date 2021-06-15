@@ -65,7 +65,7 @@ royRobot.askName()//
 royRobot.move(10)
 
 
-console.log(`Roy robot's jetpack size is ${royRobot.jetpackSize}`)
+console.log(`Roy robot's jetpack size is ${royRobot.jetpackSize}`) // note: private gets removed when ts is compiled to javascript -> use # for private fileds
 console.log('Roy robot protected name', royRobot.name) // error bc name is protected in Robot class
 // can access static methods/properties on the class, but you can make static properties private
 // Classes have two "sides": static (static properties/methods/construcor)  and instance properties/methods
