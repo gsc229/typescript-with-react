@@ -113,4 +113,5 @@ class MyComponent extends React.Component {
   }
 }
 
-console.log(renderToString(<MyComponent />)) // 
+console.log(renderToString(<MyComponent />)) // <div data-reactroot="">Hello World</div>
+

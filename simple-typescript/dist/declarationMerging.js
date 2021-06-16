@@ -69,4 +69,4 @@ class MyComponent extends react_1.default.Component {
         return react_1.default.createElement("div", null, this.helloWorld());
     }
 }
-console.log(server_1.renderToString(react_1.default.createElement(MyComponent, null))); // 
+console.log(server_1.renderToString(react_1.default.createElement(MyComponent, null))); // <div data-reactroot="">Hello World</div>
