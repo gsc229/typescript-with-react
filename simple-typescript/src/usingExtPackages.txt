@@ -1,0 +1,43 @@
+Some third party packages you'll use when creating apps include type definitions. 
+
+However when those packages do NOT include type defs you can try to install them by doing:
+
+npm i -D @types/package-name
+
+Examples:
+
+### Apollo client includes types, so just: 
+npm i -S apollo-client 
+or
+npm install apollo-client
+
+then:
+import ApolloClient from 'apollo-client'
+hover over ApolloClient and the type def will show up. Hold ctr + click to see the code
+
+### React
+npm install react
+
+then: 
+import React from 'react'
+
+Theres no type defs after hovering over React.
+Hover over 'react' and you see:
+
+Could not find a declaration file for module 'react'. 'c:/Users/gsc22/OneDrive/Documents/Lambda/Tutorials/Using TypeScript with React - Udemy/simple-typescript/node_modules/react/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/react` if it exists or add a new declaration (.d.ts) file containing `declare module 'react';`ts(7016)
+
+So....first method:
+npm i --save-dev @types/react
+
+then: 
+
+Hovering React you get:
+'React' is declared but its value is never read.ts(6133)
+(alias) namespace React
+import React
+
+
+...The Second method: add a new declaration (.d.ts) file containing `declare module 'react';
+(see the src directory)
+
