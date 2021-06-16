@@ -94,7 +94,7 @@ type StarShipWithoutName = Omit<StarShip, 'name'>
 
 /* ================ */
 
-// Exclude<T, U>
+// Exclude<T, U> Extract<T, U>
 
 type AvailableDrinks = "coffee" | "milk" | "water" | "juice" | "wisky"
 
@@ -105,6 +105,7 @@ let JanesDrink: Exclude<AvailableDrinks, DrinksJaneDoesntLike>
 JanesDrink = "milk" // error
 JanesDrink = "wisky" // no error
 
+// Extract
 let JanesSecondDrink: Extract<AvailableDrinks, DrinksJaneLikes>
 
 JanesSecondDrink = "wisky" // only wisky overlaps with available and drinks jane likes
@@ -113,3 +114,12 @@ JanesSecondDrink = "wisky" // only wisky overlaps with available and drinks jane
 /* =============== */
 
 // NonNullable<T>
+type SomeNullable = string | string[] | null | undefined
+
+interface StarshipProperties {
+  color?: 'blue' | 'red' | 'green'
+}
+
+function paintStarship( id: number, color: NonNullable<StarshipProperties['color']>) {}
+
+paintStarship(1, undefined) // 

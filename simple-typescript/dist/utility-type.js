@@ -43,7 +43,8 @@ const starships = {
 let JanesDrink;
 JanesDrink = "milk"; // error
 JanesDrink = "wisky"; // no error
+// Extract
 let JanesSecondDrink;
 JanesSecondDrink = "wisky"; // only wisky overlaps with available and drinks jane likes
-/* =============== */
-// NonNullable<T>
+function paintStarship(id, color) { }
+paintStarship(1, undefined); // 
