@@ -1,3 +1,6 @@
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+
 interface Cart {
   calculateTotal(): number
 }
@@ -87,3 +90,27 @@ namespace Salad {
 }
 
 console.log(Salad.availableDressings.includes('olive oil')) // true
+
+
+/* REACT  */
+declare module 'react' {
+  interface Component {
+    helloWorld(): string
+  }
+}
+
+React.Component.prototype.helloWorld = function() {
+  return "Hello World"
+}
+
+console.log(React.Component.prototype.helloWorld()) // Hello World 
+
+// jsx
+
+class MyComponent extends React.Component {
+  render() {
+    return <div>{this.helloWorld()}</div>
+  }
+}
+
+console.log(renderToString(<MyComponent />)) // 

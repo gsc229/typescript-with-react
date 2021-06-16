@@ -1,3 +1,3 @@
-declare module 'react' {
+/* declare module 'react' {
   export function someFn(): number
-}
+} */
