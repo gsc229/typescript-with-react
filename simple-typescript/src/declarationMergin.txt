@@ -1,0 +1,5 @@
+Interface1 + Interface2 = Merged Interface
+
+Namespace1 + Namespace2 = Merged Namespace
+
+Modules are augmented (modified)
