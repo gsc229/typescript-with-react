@@ -1,5 +1,5 @@
 "use strict";
-/*Checkout docs on utility types: https://www.typescriptlang.org/docs/handbook/utility-types.html */
+/* Checkout docs on utility types: https://www.typescriptlang.org/docs/handbook/utility-types.html */
 // Change This:
 //const updateStarship = (id: number, starship: StarShip) => {}
 // to this:
