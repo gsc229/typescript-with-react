@@ -8,10 +8,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "jsx": "react",
-    //"sourceMap": true <-- if using ts-loader and not babel-loader
+    "sourceMap": true,
     "moduleResolution": "Node",
-    "resolveJsonModule": true // <-- allows us to use the moduleResolution option and set it to Node
-
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*"]
 }
