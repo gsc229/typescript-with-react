@@ -1,0 +1,8 @@
+1. Groups all your dependencies into bundles and gets them ready for production.
+2. Webpack needs to be configured for typescript. We have to tell Webpack how to compile ts to javascript.
+    ex. .ts --> use ts-loader or babel-loader
+        .svg --> use @svgr/webpack
+
+        ...and others
+
+        
