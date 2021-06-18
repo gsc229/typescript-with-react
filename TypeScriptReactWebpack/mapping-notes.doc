@@ -1,0 +1,6 @@
+1. Error output will output lines from the compiled index.js in the dist folder. That's not what we are woking in.
+2. We want to be able to see error output in the .tsx file in the src folder
+3. To achieve this we use mapping. 
+4. We can tell Webpack to autogenerate a map that maps the error in the index.js to the .tsx file it originated in.
+    ex. index.js line 10 --> index.tsx: line 5
+5. We can use Webpacks Devtool: https://webpack.js.org/configuration/devtool/
