@@ -56,3 +56,5 @@ type InferredPart = InferSomePart<{
 // How ReturnType utility type works by inferring:
 // type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
 type MyFunctReturnValue = ReturnType<() => true>
+
+
